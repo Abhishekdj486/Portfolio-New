@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            position:relative;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(0, 0, 33);
+            color: white;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #audio-container {
+            text-align: center;
+        }
+        #audio-con {
+            display:-webkit-inline-box;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+            width: 100%;
+        }
+        nav ul{
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0 23px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        nav ul li a:hover{
+            color: rgb(153, 153, 226);
+            font-size: 1.01rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">Abhi's Portfolio</div>
+        <div class="rignt">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact_me.html">Contact Me</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="audio.html" id="heart-icon">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </li>
+        </div>
+    </nav>
+    <div id="audio-container">
+        <h1>Favourites Playlist</h1>
+        <p id="audio-name">Ek_Pyar_Ka_Nagma_Hai&nbsp;</p>
+        <audio controls>
+            <source src="C:\Users\abhis\portfolio-website\audio\Ek_Pyar_Ka_Nagma_Hai.mp3" type="audio/mp3">
+        
+        </audio>
+    </div>
+
+    <hr> <!-- Horizontal line -->
+
+    <div id="audio-container">
+        <p id="audio-name">O_Mere_Dil_Ke_Chain___Sanam&nbsp;</p>
+        <audio controls>
+            <source src="C:\Users\abhis\portfolio-website\audio\O_Mere_Dil_Ke_Chain___Sanam.mp3" type="audio/mp3">
+    
+        </audio>
+    </div>
+
+    <hr> <!-- Horizontal line -->
+
+    <div id="audio-container">
+        <p id="audio-name">Bullet_wali&nbsp;</p>
+        <audio controls>
+            <source src="C:\Users\abhis\portfolio-website\audio\Bullet_wali.mp3" type="audio/mp3">
+            
+        </audio>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const audioPlayers = document.querySelectorAll('audio');
+    
+                audioPlayers.forEach((player) => {
+                    player.addEventListener('play', function () {
+                        audioPlayers.forEach((otherPlayer) => {
+                            if (otherPlayer !== player) {
+                                otherPlayer.pause();
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
